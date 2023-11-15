@@ -1,0 +1,11 @@
+.footer {
+  background-color: #393e46;
+  color: white;
+  height: 250px;
+  padding: 5%;
+  padding-top: 1%;
+}
+.center-content {
+  text-align: center;
+  margin: 0 auto;
+}

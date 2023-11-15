@@ -1,0 +1,19 @@
+#illustration {
+  width: 400px;
+  height: 500px;
+  float: right;
+}
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.card-sololabor {
+  width: 600px;
+  margin: 30px;
+}
+.card-img {
+  width: 200px;
+  height: 100px;
+}

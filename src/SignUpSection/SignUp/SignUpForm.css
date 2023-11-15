@@ -1,0 +1,40 @@
+form {
+  border-radius: 20px;
+  font-size: 14px;
+}
+.SignUpForm {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+.Container {
+  border-radius: 20px;
+  width: 100%;
+  margin-left: 500px;
+  margin-top: 30px;
+}
+.column {
+  flex: 30%;
+  margin-left: 20px;
+}
+.row {
+  display: flex;
+}
+/* img {
+  width: 200px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 15px;
+} */
+#signupWith {
+  margin-top: 20px;
+}
+i {
+  position: absolute;
+  top: 42%;
+  right: 52%;
+  cursor: pointer;
+}
+.input {
+  size: 50;
+}

@@ -1,0 +1,28 @@
+.ProductCard {
+  max-width: 300px;
+  border-radius: 2px;
+  text-align: center;
+  font-family: arial;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+/* .container {
+  width: 12px;
+} */
+/* .price {
+  color: grey;
+  font-size: 12px;
+} */
+
+.ProductCard button {
+  color: white;
+  background-color: #00adb5;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 20px;
+}
+
+.ProductCard button:hover {
+  opacity: 0.7;
+}

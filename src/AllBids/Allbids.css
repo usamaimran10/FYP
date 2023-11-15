@@ -1,0 +1,28 @@
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+  border-radius: 10px;
+}
+.card-img {
+  width: 200px;
+  height: 100px;
+}
+.card-features {
+  margin: 50px 100px;
+}
+.icon {
+  font-size: 50px;
+  color: rgb(0, 179, 0);
+  top: 5%;
+  right: 5%;
+}
+.card-features {
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 350px;
+}
+
+.feature-detail {
+  float: left;
+}

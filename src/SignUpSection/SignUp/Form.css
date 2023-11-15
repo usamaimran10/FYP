@@ -1,0 +1,38 @@
+.heading {
+  text-align: center;
+  margin-top: 20px;
+}
+.buttons {
+  width: 100%;
+  text-align: center;
+}
+#signup {
+  color: gray;
+}
+#signin {
+  color: gray;
+}
+.buttons Button {
+  background-color: #eeeeee;
+  border: none;
+  padding: 10px 30px;
+  margin: 0px 3px;
+}
+.buttons Button:hover {
+  background-color: #eeeeee;
+  border: none;
+  padding: 10px 30px;
+  margin: 0px 3px;
+}
+a:link {
+  text-decoration: none;
+  color: none;
+}
+a:active {
+  text-decoration: none;
+  color: gray;
+}
+a:visited {
+  text-decoration: none;
+  color: gray;
+}

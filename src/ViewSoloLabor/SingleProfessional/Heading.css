@@ -1,0 +1,30 @@
+.HeadingCmpt {
+  display: inline-flex;
+}
+.heading {
+  color: #393e46;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.cart {
+  margin-top: 25px;
+  margin-left: 100px;
+  color: #393e46;
+  text-decoration: none;
+}
+.bag {
+  height: 30px;
+  width: 30px;
+  color: #232527;
+  margin-top: 20px;
+  text-decoration: none;
+  margin-left: 50px;
+}
+.searchProduct {
+  border-radius: 50px;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 500px;
+  border: 1.5px solid rgb(0, 82, 121);
+}

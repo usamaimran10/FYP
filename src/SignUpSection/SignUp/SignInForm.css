@@ -1,0 +1,19 @@
+form {
+  width: 500px;
+  border-radius: 20px;
+}
+.SignInForm {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+.Container {
+  border-radius: 20px;
+  margin-left: 520px;
+}
+h3 {
+  text-align: center;
+}
+button {
+  justify-content: center;
+}
