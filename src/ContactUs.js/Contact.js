@@ -10,7 +10,7 @@ const Contact = () => {
   const contactUs = async (e) => {
     e.preventDefault();
     let res = await axios.post(
-      "http://localhost:5000/api/auth/helpAndSupport",
+      "https://fyp-backend-gules.vercel.app/api/auth/helpAndSupport",
       {
         email: email,
         name: name,

@@ -21,7 +21,7 @@ const UpdateSoloLabor = () => {
     try {
       console.log("in try method");
       const res = await axios.put(
-        `http://localhost:5000/api/auth/updatesololabour/${userId.id}`,
+        `https://fyp-backend-gules.vercel.app/api/auth/updatesololabour/${userId.id}`,
         {
           address: inputValues.address,
           dob: inputValues.dob,
@@ -76,7 +76,7 @@ const UpdateSoloLabor = () => {
     const userId = Jwt.decode(parsedUser.token);
     console.log(userId.id);
     const res = await axios.get(
-      ` http://localhost:5000/api/auth/viewprofessional/${userId.id}`
+      ` https://fyp-backend-gules.vercel.app/api/auth/viewprofessional/${userId.id}`
     );
     let prevData = res.data.user_id;
     console.log(prevData);

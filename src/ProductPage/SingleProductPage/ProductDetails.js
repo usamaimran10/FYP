@@ -17,7 +17,7 @@ const ProductDetails = (props) => {
   useEffect(async () => {
     console.log("This is prod id", prodID);
     const res = await axios.get(
-      `http://localhost:5000/api/product/viewproduct/${prodID}`
+      `https://fyp-backend-gules.vercel.app/api/product/viewproduct/${prodID}`
     );
     setImage(res.data.main_image);
     setName(res.data.prod_brand);

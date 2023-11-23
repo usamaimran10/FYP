@@ -10,11 +10,14 @@ const UploadSeller = () => {
   const [files, setFiles] = useState("");
   const [image, setImage] = useState("");
   const addtoProdtoDb = () => {
-    const res = axios.post("http://localhost:5000/api/product/addproduct", {
-      main_image: image,
-      prod_desc: inputValues.title,
-      prod_brand: inputValues.brand,
-    });
+    const res = axios.post(
+      "https://fyp-backend-gules.vercel.app/api/product/addproduct",
+      {
+        main_image: image,
+        prod_desc: inputValues.title,
+        prod_brand: inputValues.brand,
+      }
+    );
   };
   const handleAddtoProduct = async () => {
     // const UserID = window.localStorage.getItem("UserData");
@@ -25,7 +28,7 @@ const UploadSeller = () => {
     const userId = Jwt.decode(parsedUser.token);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/product/addproduct",
+        "https://fyp-backend-gules.vercel.app/api/product/addproduct",
         {
           main_image: image,
           prod_desc: inputValues.title,

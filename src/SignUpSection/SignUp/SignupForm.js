@@ -67,13 +67,16 @@ const SignupForm = () => {
 
     try {
       console.log("in try method");
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
-        fullName: Username,
-        email: Email,
-        phone: PhoneNumber,
-        password: Password,
-        category: Category,
-      });
+      const res = await axios.post(
+        "https://fyp-backend-gules.vercel.app/api/auth/register",
+        {
+          fullName: Username,
+          email: Email,
+          phone: PhoneNumber,
+          password: Password,
+          category: Category,
+        }
+      );
 
       console.log(res.data);
       window.location.href = "/signin";

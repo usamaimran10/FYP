@@ -14,17 +14,19 @@ const ProductDetails = (props) => {
 
   const gotoChat = async () => {
     const loginId = localStorage.getItem("ChatId");
-    let res = await axios.post(`http://localhost:5000/api/chat/newChat`, [
-      loginId,
-      ProUserid,
-    ]);
+    let res = await axios.post(
+      `https://fyp-backend-gules.vercel.app/api/chat/newChat`,
+      [loginId, ProUserid]
+    );
 
     console.log(res.data);
     window.location.href = `/inbox/${res.data._id}`;
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/gig/viewSpecificGig/${profsID}`)
+      .get(
+        `https://fyp-backend-gules.vercel.app/api/gig/viewSpecificGig/${profsID}`
+      )
       .then((res) => {
         console.log(res);
         console.log("this is prof id", res.data.service_provider.user_id._id);

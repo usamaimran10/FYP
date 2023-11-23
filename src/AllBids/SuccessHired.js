@@ -9,7 +9,7 @@ const SuccessHired = (props) => {
     console.log(Reqid);
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/project/hireprofessional`,
+        `https://fyp-backend-gules.vercel.app/api/project/hireprofessional`,
         {
           bid_id: Bidid,
           request_id: Reqid,

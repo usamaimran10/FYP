@@ -18,7 +18,7 @@ const BidProf = () => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/request/viewactiverequests`
+        `https://fyp-backend-gules.vercel.app/api/request/viewactiverequests`
       );
       console.log(res.data);
       setOffers(res.data);

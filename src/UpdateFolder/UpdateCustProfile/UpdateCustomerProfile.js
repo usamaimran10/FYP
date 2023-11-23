@@ -20,7 +20,7 @@ const UpdateCustomerProfile = () => {
     try {
       console.log("in try method");
       const res = await axios.put(
-        ` http://localhost:5000/api/auth/updatecustomer/${userId.id}`,
+        ` https://fyp-backend-gules.vercel.app/api/auth/updatecustomer/${userId.id}`,
         {
           dob: inputValues.dob,
           cnic: inputValues.cnic,
@@ -73,7 +73,7 @@ const UpdateCustomerProfile = () => {
     const userId = Jwt.decode(parsedUser.token);
     console.log(userId.id);
     const res = await axios.get(
-      `http://localhost:5000/api/auth/viewuser/${userId.id}`
+      `https://fyp-backend-gules.vercel.app/api/auth/viewuser/${userId.id}`
     );
     let prevData = res.data;
     console.log(prevData);

@@ -12,7 +12,7 @@ const BiddedOffers = () => {
 
   const viewBiddedOffers = async () => {
     const res = await axios.get(
-      `http://localhost:5000/api/bid/viewalloffers/${ReqId}`
+      `https://fyp-backend-gules.vercel.app/api/bid/viewalloffers/${ReqId}`
     );
     try {
       console.log(res);

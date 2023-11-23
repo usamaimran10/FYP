@@ -20,7 +20,7 @@ const RequestForm = () => {
     try {
       console.log({ inputValues });
       const res = await axios.post(
-        "http://localhost:5000/api/request/makerequest",
+        "https://fyp-backend-gules.vercel.app/api/request/makerequest",
         {
           title: inputValues.title,
           description: inputValues.descp,

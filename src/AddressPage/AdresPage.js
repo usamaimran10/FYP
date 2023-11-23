@@ -35,12 +35,15 @@ const AdresPage = () => {
     e.preventDefault();
     console.log(infoForm);
     try {
-      const res = await axios.post("http://localhost:5000/api/order/addOrder", {
-        cart: itemdetails,
-        cust_info: infoForm,
-        cust_id: userId.id,
-        total_price: totalcash,
-      });
+      const res = await axios.post(
+        "https://fyp-backend-gules.vercel.app/api/order/addOrder",
+        {
+          cart: itemdetails,
+          cust_info: infoForm,
+          cust_id: userId.id,
+          total_price: totalcash,
+        }
+      );
       console.log(res.data);
     } catch (err) {
       console.log(err);

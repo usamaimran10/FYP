@@ -23,7 +23,7 @@ const UpdateProfessionalProfiel = () => {
       console.log("in try method");
       console.log(inputValues);
       const res = await axios.put(
-        `http://localhost:5000/api/auth/updateprofessional/${userId.id}`,
+        `https://fyp-backend-gules.vercel.app/api/auth/updateprofessional/${userId.id}`,
         {
           dob: inputValues.dob,
           cnic: inputValues.cnic,
@@ -71,7 +71,7 @@ const UpdateProfessionalProfiel = () => {
   };
   const PreviousData = async () => {
     const res = await axios.get(
-      `http://localhost:5000/api/auth/viewprofessional/${userId.id}`
+      `https://fyp-backend-gules.vercel.app/api/auth/viewprofessional/${userId.id}`
     );
     let prevData = res.data.user_id;
     console.log(prevData);

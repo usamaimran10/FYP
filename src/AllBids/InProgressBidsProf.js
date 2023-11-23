@@ -11,7 +11,7 @@ const InProgressBidsProf = () => {
     const userId = Jwt.decode(varUser);
     console.log(userId.id);
     const res = await axios.get(
-      `http://localhost:5000/api/project/viewProfProj/${userId.id}`
+      `https://fyp-backend-gules.vercel.app/api/project/viewProfProj/${userId.id}`
     );
     try {
       console.log(res);

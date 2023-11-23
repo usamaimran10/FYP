@@ -21,7 +21,7 @@ const BidOnRequest = () => {
 
     try {
       const res = await axios.post(
-        " http://localhost:5000/api/bid/bidonrequest",
+        " https://fyp-backend-gules.vercel.app/api/bid/bidonrequest",
         {
           description: inputValues.descp,
           duration: inputValues.duration,
@@ -46,7 +46,7 @@ const BidOnRequest = () => {
   const getSpecificReq = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/request/openSpecificRequest/${ReqId}`
+        `https://fyp-backend-gules.vercel.app/api/request/openSpecificRequest/${ReqId}`
       );
 
       console.log(res.data);

@@ -23,7 +23,7 @@ const NewPassword = () => {
         cnfrmPassword === newPassword
       ) {
         const res = await axios.put(
-          "http://localhost:5000/api/auth/updatePassword",
+          "https://fyp-backend-gules.vercel.app/api/auth/updatePassword",
           {
             password: cnfrmPassword,
           }

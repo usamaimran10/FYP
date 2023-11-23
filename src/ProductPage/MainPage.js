@@ -29,7 +29,7 @@ const MainPage = () => {
   useEffect(() => {
     console.log("inside axios");
     axios
-      .get("http://localhost:5000/api/product/viewproducts")
+      .get("https://fyp-backend-gules.vercel.app/api/product/viewproducts")
       .then((resp) => {
         console.log(resp.data);
         dispatch(productsActions.setProducts(resp.data));

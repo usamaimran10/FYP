@@ -30,7 +30,7 @@ const MainPageSoloLabor = () => {
   useEffect(() => {
     console.log("view professionals");
     axios
-      .get("http://localhost:5000/api/gig/viewlabourGigs")
+      .get("https://fyp-backend-gules.vercel.app/api/gig/viewlabourGigs")
       .then((resp) => {
         console.log(resp.data);
 

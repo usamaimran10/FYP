@@ -51,7 +51,7 @@ const Chat = () => {
 
   // recieve message
   useEffect(() => {
-    socket = io(`http://localhost:5000/`);
+    socket = io(`https://fyp-backend-gules.vercel.app/`);
     socket.on("getMessage", (message) => {
       console.log("message", message);
       //message.text = cipher.decrypt(message.text);
@@ -81,7 +81,9 @@ const Chat = () => {
     if (params.chatid !== "thread") {
       // get chat
       axios
-        .get(`http://localhost:5000/api/chat/getChat/${params.chatid}`)
+        .get(
+          `https://fyp-backend-gules.vercel.app/api/chat/getChat/${params.chatid}`
+        )
         .then(({ data }) => {
           const other = data.chat.members.find((item) => item._id !== loginId);
           setCurrentChat({
@@ -102,7 +104,7 @@ const Chat = () => {
   //run on mount get chats
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/chat/getChats/${loginId}`)
+      .get(`https://fyp-backend-gules.vercel.app/api/chat/getChats/${loginId}`)
       .then((result) => {
         const newChats = result.data.conversation.map((item) => ({
           title: item.members.find((item) => item._id !== loginId).fullName,
@@ -136,7 +138,10 @@ const Chat = () => {
         chat: currentChat._id,
       },
     ]);
-    axios.post(`http://localhost:5000/api/chat/newMessage`, tempMessage);
+    axios.post(
+      `https://fyp-backend-gules.vercel.app/api/chat/newMessage`,
+      tempMessage
+    );
     socket.emit("sendMessage", {
       receiverId: currentChat.members.find((member) => {
         return member._id !== loginId;

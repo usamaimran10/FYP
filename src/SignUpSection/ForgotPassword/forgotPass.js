@@ -7,7 +7,7 @@ const ForgotPass = () => {
     e.preventDefault();
     console.log(Email);
     let res = await axios.post(
-      `http://localhost:5000/api/auth/forgotpassword`,
+      `https://fyp-backend-gules.vercel.app/api/auth/forgotpassword`,
       {
         email: Email,
       }

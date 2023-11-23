@@ -20,7 +20,7 @@ const UpdateSellerProfile = () => {
     try {
       console.log("in try method");
       const res = await axios.put(
-        `http://localhost:5000/api/auth/updateseller/${userId.id}`,
+        `https://fyp-backend-gules.vercel.app/api/auth/updateseller/${userId.id}`,
         {
           dob: inputValues.dob,
           cnic: inputValues.cnic,

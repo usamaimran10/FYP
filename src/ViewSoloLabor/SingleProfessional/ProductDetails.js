@@ -13,7 +13,7 @@ const ProductDetails = (props) => {
   useEffect(async () => {
     console.log(soloID);
     const res = await axios.get(
-      `http://localhost:5000/api/auth/viewprofessional/${soloID}`
+      `https://fyp-backend-gules.vercel.app/api/auth/viewprofessional/${soloID}`
     );
     setImage(res.data.user_id.image);
     setName(res.data.user_id.fullName);

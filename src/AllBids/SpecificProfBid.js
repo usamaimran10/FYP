@@ -20,7 +20,7 @@ const SpecificProfBid = () => {
     console.log(userId.id);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/bid/viewbids/${userId.id}
+        `https://fyp-backend-gules.vercel.app/api/bid/viewbids/${userId.id}
         `
       );
       console.log(res.data);

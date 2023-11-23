@@ -5,7 +5,9 @@ const ViewAllUsers = () => {
   const [offers, setOffers] = useState([]);
   const viewAllReq = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/viewusers");
+      const res = await axios.get(
+        "https://fyp-backend-gules.vercel.app/api/auth/viewusers"
+      );
 
       setOffers(res.data);
       //console.log("From api", res.data);

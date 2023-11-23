@@ -31,7 +31,7 @@ const Dashboard = () => {
     if (getUserName) {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/auth/viewuser/${id}`
+          `https://fyp-backend-gules.vercel.app/api/auth/viewuser/${id}`
         );
         setUsername(res.data.fullName);
         console.log(userName);

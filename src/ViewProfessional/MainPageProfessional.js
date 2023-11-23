@@ -34,7 +34,7 @@ const MainPage = () => {
   useEffect(() => {
     console.log("view professionals");
     axios
-      .get("http://localhost:5000/api/gig/viewProfGigs")
+      .get("https://fyp-backend-gules.vercel.app/api/gig/viewProfGigs")
       .then((resp) => {
         console.log(resp.data);
         dispatch(professionalsActions.setProfessional(resp.data));

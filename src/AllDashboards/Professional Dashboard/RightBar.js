@@ -26,7 +26,7 @@ const RightBar = (props) => {
   // useEffect(() => {
   //   axios
   //     .get(
-  //       `http://localhost:5000/api/gig/viewSpecificGig/${profsID}`
+  //       `https://fyp-backend-gules.vercel.app/api/gig/viewSpecificGig/${profsID}`
   //     )
   //     .then((res) => {
   //       console.log(res);

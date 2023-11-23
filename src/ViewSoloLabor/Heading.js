@@ -28,7 +28,7 @@ const Heading = () => {
     const indentifier = setTimeout(async () => {
       if (search) {
         let res = await axios.get(
-          ` http://localhost:5000/api/search/labourGigSearch/${search}`
+          ` https://fyp-backend-gules.vercel.app/api/search/labourGigSearch/${search}`
         );
 
         console.log("if", res.data);
@@ -36,7 +36,7 @@ const Heading = () => {
         dispatch(soloLaborActions.setSololabor(res.data));
       } else {
         axios
-          .get("http://localhost:5000/api/gig/viewlabourGigs")
+          .get("https://fyp-backend-gules.vercel.app/api/gig/viewlabourGigs")
           .then((resp) => {
             console.log("else", resp.data);
             dispatch(soloLaborActions.setSololabor(resp.data));

@@ -18,7 +18,7 @@ const SigninForm = () => {
     if (isValidEmail(data.email) && simpleValidPassword(data.password)) {
       try {
         const res = await axios
-          .post("http://localhost:5000/api/auth/login", {
+          .post("https://fyp-backend-gules.vercel.app/api/auth/login", {
             phone: data.PhoneNumber,
             email: data.email,
             password: data.password,

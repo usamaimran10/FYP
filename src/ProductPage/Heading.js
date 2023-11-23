@@ -25,14 +25,14 @@ const Heading = () => {
     const indentifier = setTimeout(async () => {
       if (search) {
         let res = await axios.get(
-          `http://localhost:5000/api/search/productSearch/${search}`
+          `https://fyp-backend-gules.vercel.app/api/search/productSearch/${search}`
         );
         console.log(res);
 
         dispatch(productsActions.setProducts(res.data));
       } else {
         axios
-          .get("http://localhost:5000/api/product/viewproducts")
+          .get("https://fyp-backend-gules.vercel.app/api/product/viewproducts")
           .then((resp) => {
             console.log(resp.data);
             dispatch(productsActions.setProducts(resp.data));

@@ -8,7 +8,7 @@ const ViewReqOnBid = () => {
   const viewFullReq = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/bid/viewReqOnBid/${BidId}`
+        `https://fyp-backend-gules.vercel.app/api/bid/viewReqOnBid/${BidId}`
       );
       console.log(res.data);
       setRequest(res.data);

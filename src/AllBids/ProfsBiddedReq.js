@@ -18,7 +18,7 @@ const ProfsBiddedReq = () => {
     console.log(userId.id);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/request/viewByStatus/Completed/${userId.id}`
+        `https://fyp-backend-gules.vercel.app/api/request/viewByStatus/Completed/${userId.id}`
       );
       console.log(res.data);
       setBids(res.data);

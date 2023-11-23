@@ -9,14 +9,16 @@ const EditUsers = () => {
     setOffers((prev) => prev.filter((item) => item._id != userId));
     try {
       let resp = await axios.delete(
-        `http://localhost:5000/api/auth/deleteuser/${userId}`
+        `https://fyp-backend-gules.vercel.app/api/auth/deleteuser/${userId}`
       );
       console.log("Delete successful");
     } catch {}
   };
   const viewAllReq = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/viewusers");
+      const res = await axios.get(
+        "https://fyp-backend-gules.vercel.app/api/auth/viewusers"
+      );
 
       setOffers(res.data);
       //console.log("From api", res.data);

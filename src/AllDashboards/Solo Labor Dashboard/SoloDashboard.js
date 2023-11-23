@@ -31,7 +31,7 @@ const SoloDashboard = () => {
     if (getUserName) {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/auth/viewprofessional/${id}`
+          `https://fyp-backend-gules.vercel.app/api/auth/viewprofessional/${id}`
         );
         setUsername(res.data.user_id.fullName);
         console.log(userName);

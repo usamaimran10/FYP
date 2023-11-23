@@ -18,7 +18,7 @@ const Allbids = (props) => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/request/viewSpecificRequest/${userId.id}`
+        `https://fyp-backend-gules.vercel.app/api/request/viewSpecificRequest/${userId.id}`
       );
       console.log(res.data);
       setOffers(res.data);

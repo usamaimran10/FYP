@@ -22,14 +22,14 @@ const Heading = () => {
     const indentifier = setTimeout(async () => {
       if (search) {
         let res = await axios.get(
-          `http://localhost:5000/api/search/gigSearch/${search}`
+          `https://fyp-backend-gules.vercel.app/api/search/gigSearch/${search}`
         );
         console.log(res);
 
         dispatch(professionalsActions.setProfessional(res.data));
       } else {
         axios
-          .get("http://localhost:5000/api/gig/viewProfGigs")
+          .get("https://fyp-backend-gules.vercel.app/api/gig/viewProfGigs")
           .then((resp) => {
             console.log(resp.data);
             dispatch(professionalsActions.setProfessional(resp.data));

@@ -21,7 +21,9 @@ const RightBar = (props) => {
   useEffect(() => {
     try {
       axios
-        .get(`http://localhost:5000/api/gig/viewSpecificGig/${profsID}`)
+        .get(
+          `https://fyp-backend-gules.vercel.app/api/gig/viewSpecificGig/${profsID}`
+        )
         .then((res) => {
           console.log(res);
           //console.log("this is prof id", res.data.service_provider.user_id._id);
