@@ -30,7 +30,7 @@ const CreateGig = (props) => {
       </h1>
 
       <div style={{ display: "inline-flex" }}>
-        <button
+        {/* <button
           onClick={gotoUpdate}
           style={{
             backgroundColor: "#00ADB5",
@@ -48,7 +48,7 @@ const CreateGig = (props) => {
           <BsPencilSquare
             style={{ width: "20px", height: "20px", marginLeft: "10px" }}
           />
-        </button>
+        </button> */}
         <button
           style={{
             backgroundColor: "#00ADB5",

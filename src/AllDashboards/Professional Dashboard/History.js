@@ -24,19 +24,22 @@ const History = () => {
         <div
           className="history"
           style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
             backgroundColor: "#EEEEEE",
             color: "#393E46",
             width: "250px",
             height: "200px",
             marginLeft: "30px",
             borderRadius: "10px",
+            padding: "20px",
           }}
         >
           <h3
             style={{
               fontSize: "20px",
-              marginLeft: "40px",
-              marginTop: "17px",
+
               fontWeight: "bold",
               color: "#00ADB5",
             }}
@@ -48,10 +51,6 @@ const History = () => {
             <label style={{ fontWeight: "bold", fontSize: "22px" }}>
               Constructions
             </label>
-            <p style={{ marginTop: "30px" }}>
-              See More
-              <VscArrowSmallRight style={{}} />
-            </p>
           </div>
           <div style={{ display: "inline-flex" }}>
             {/* <GoPrimitiveDot style={{ marginTop: "10px" }} /> */}
@@ -63,10 +62,6 @@ const History = () => {
             >
               Bridge
             </label>
-            <p style={{ marginTop: "30px" }}>
-              See More
-              <VscArrowSmallRight style={{}} />
-            </p>
           </div>
         </div>
 
@@ -110,10 +105,10 @@ const History = () => {
                 marginLeft: "10px",
               }}
             >
-              Ahmed Liaqat
+              Ahmed
             </h3>
           </div>
-          <div style={{ display: "inline-flex" }}>
+          <div style={{ display: "flex" }}>
             <FaUserCircle
               style={{
                 height: "20px",
@@ -129,10 +124,10 @@ const History = () => {
                 marginLeft: "10px",
               }}
             >
-              Mohammad Annus
+              Ali
             </h3>
           </div>
-          <div style={{ display: "inline-flex" }}>
+          <div style={{ display: "flex" }}>
             <FaUserCircle
               style={{
                 height: "20px",
@@ -148,7 +143,7 @@ const History = () => {
                 marginLeft: "10px",
               }}
             >
-              Mutahir Husnain
+              Abdullah
             </h3>
           </div>
         </div>
@@ -175,7 +170,7 @@ const History = () => {
           >
             Upcoming Deadline
           </h3>
-          <div style={{ display: "inline-flex" }}>
+          <div style={{ display: "flex" }}>
             <h3
               style={{
                 fontSize: "16px",

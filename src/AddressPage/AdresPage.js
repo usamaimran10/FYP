@@ -25,8 +25,13 @@ const AdresPage = () => {
     });
   };
   const catDetails = localStorage.getItem("checkout");
+  // const varUser = localStorage.getItem("UserData");
+  // const userId = Jwt.decode(varUser);
+  // console.log(userId.id);
   const varUser = localStorage.getItem("UserData");
-  const userId = Jwt.decode(varUser);
+  const parsedUser = JSON.parse(varUser);
+  console.log("TOKEN", JSON.parse(varUser));
+  const userId = Jwt.decode(parsedUser.token);
   console.log(userId.id);
   const itemdetails = JSON.parse(catDetails);
   console.log(itemdetails);

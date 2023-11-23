@@ -35,34 +35,12 @@ const Sidebar = () => {
           </CDBSidebarHeader>
           <CDBSidebarContent className="sidebar-content">
             <CDBSidebarMenu>
-              <NavLink exact to="/" activeClassName="activeClicked">
-                <CDBSidebarMenuItem style={{ fontSize: "2rem" }}>
-                  Dashboard
-                </CDBSidebarMenuItem>
-              </NavLink>
-
               <NavLink exact to="/profile" activeClassName="activeClicked">
                 <CDBSidebarMenuItem
                   style={{ fontSize: "2rem" }}
                   onClick={gotoCart}
                 >
                   Cart
-                </CDBSidebarMenuItem>
-              </NavLink>
-              <NavLink exact to="/profile" activeClassName="activeClicked">
-                <CDBSidebarMenuItem style={{ fontSize: "2rem" }}>
-                  Order
-                </CDBSidebarMenuItem>
-              </NavLink>
-              <NavLink exact to="/profile" activeClassName="activeClicked">
-                <CDBSidebarMenuItem style={{ fontSize: "2rem" }}>
-                  Messages
-                </CDBSidebarMenuItem>
-              </NavLink>
-
-              <NavLink exact to="/profile" activeClassName="activeClicked">
-                <CDBSidebarMenuItem style={{ fontSize: "2rem" }}>
-                  Support
                 </CDBSidebarMenuItem>
               </NavLink>
             </CDBSidebarMenu>

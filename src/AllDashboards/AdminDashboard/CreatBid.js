@@ -83,7 +83,7 @@ const CreatBid = () => {
             color: "#393E46",
           }}
         >
-          Welcome,Shazil
+          Welcome, User
         </h3>
       </div>
     </div>

@@ -10,8 +10,13 @@ const History = () => {
   const [offers, setOffers] = useState([]);
   const viewAllReq = async () => {
     const BidId = localStorage.getItem("BidID");
+    // const varUser = localStorage.getItem("UserData");
+    // const userId = Jwt.decode(varUser);
     const varUser = localStorage.getItem("UserData");
-    const userId = Jwt.decode(varUser);
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
+    console.log(userId.id);
 
     try {
       const res = await axios.get(
@@ -166,7 +171,7 @@ const History = () => {
                 marginLeft: "10px",
               }}
             >
-              {offers[1]?.user_id.fullName}
+              {offers[0]?.user_id.fullName}
             </h3>
           </div>
         </div>

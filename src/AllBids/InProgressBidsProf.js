@@ -7,8 +7,14 @@ import SingleBidCompnt from "./SingleBidCompnt";
 const InProgressBidsProf = () => {
   const [offers, setOffers] = useState([]);
   const viewBids = async () => {
+    // const varUser = localStorage.getItem("UserData");
+    // const userId = Jwt.decode(varUser);
+    // console.log(userId.id);
+
     const varUser = localStorage.getItem("UserData");
-    const userId = Jwt.decode(varUser);
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
     console.log(userId.id);
     const res = await axios.get(
       `https://fyp-backend-gules.vercel.app/api/project/viewProfProj/${userId.id}`

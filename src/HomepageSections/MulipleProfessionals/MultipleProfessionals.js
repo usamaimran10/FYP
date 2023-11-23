@@ -51,12 +51,12 @@ const MultipleItem = () => {
         <Slider pos={IndexNumber}>
           <Card
             imgSrc="https://res.cloudinary.com/niaxeecomsats/image/upload/v1638384039/ConstructPak/The_Difference_Between_a_Project_Manager_and_a_Construction_Manager_o1mlge.jpg"
-            text="Shazil"
+            text="Ali"
             para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
           />
           <Card
             imgSrc="https://res.cloudinary.com/niaxeecomsats/image/upload/v1638384040/ConstructPak/162_hr_construction_manager_jsepz4.jpg"
-            text="Jawad"
+            text="Ahmed"
             para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
           />
           <Card

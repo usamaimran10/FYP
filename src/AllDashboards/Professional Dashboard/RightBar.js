@@ -71,26 +71,15 @@ const RightBar = (props) => {
           >
             {props.name}
           </h3>
-
-          <BsFillBellFill
-            style={{
-              marginTop: "35px",
-              marginLeft: "20px",
-              fontSize: "1.5rem",
-            }}
-          />
-          <BiDotsHorizontal
-            style={{
-              marginTop: "35px",
-              marginLeft: "10px",
-              fontSize: "1.5rem",
-            }}
-          />
         </div>
 
         <div
           onClick={gotoUpdate}
-          style={{ marginTop: "20px", fontSize: "1.8rem", cursor: "pointer" }}
+          style={{
+            fontSize: "1.8rem",
+            cursor: "pointer",
+            padding: "20px",
+          }}
         >
           <ul>
             <li>Profile</li>
