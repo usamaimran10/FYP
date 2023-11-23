@@ -9,13 +9,18 @@ const UpdateCustomerProfile = () => {
   const [files, setFiles] = useState("");
   const UpdateCustomerProf = async (e) => {
     e.preventDefault();
-    const data = localStorage.getItem("UserData");
-    const decoded = Jwt(data);
-    console.log(decoded.id);
+    // const data = localStorage.getItem("UserData");
+    // const decoded = Jwt.decode(data);
+    // console.log(decoded.id);
+    const varUser = localStorage.getItem("UserData");
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
+    console.log(userId.id);
     try {
       console.log("in try method");
       const res = await axios.put(
-        ` http://localhost:5000/api/auth/updatecustomer/${decoded.id}`,
+        ` http://localhost:5000/api/auth/updatecustomer/${userId.id}`,
         {
           dob: inputValues.dob,
           cnic: inputValues.cnic,
@@ -59,11 +64,16 @@ const UpdateCustomerProfile = () => {
       });
   };
   const PreviousData = async () => {
-    const data = localStorage.getItem("UserData");
-    const decoded = Jwt(data);
-    console.log(decoded.id);
+    //  const data = localStorage.getItem("UserData");
+    //     const decoded = Jwt.decode(data);
+    //     console.log(decoded.id);
+    const varUser = localStorage.getItem("UserData");
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
+    console.log(userId.id);
     const res = await axios.get(
-      `http://localhost:5000/api/auth/viewuser/${decoded.id}`
+      `http://localhost:5000/api/auth/viewuser/${userId.id}`
     );
     let prevData = res.data;
     console.log(prevData);

@@ -2,6 +2,7 @@ import React from "react";
 import "./CreateGig.css";
 
 const CreateGig = () => {
+  
   return (
     <>
       <div>

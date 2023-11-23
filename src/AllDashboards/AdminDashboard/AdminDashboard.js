@@ -14,7 +14,7 @@ const Dashboard = () => {
 
     console.log(localStorage.getItem("UserData"));
     let res = localStorage.getItem("UserData");
-    let decoded = Jwt(res);
+    let decoded = Jwt.decode(res);
     console.log(decoded);
   });
 

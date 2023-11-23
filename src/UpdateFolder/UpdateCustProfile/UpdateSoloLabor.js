@@ -10,13 +10,18 @@ const UpdateSoloLabor = () => {
 
   const UpdateSoloLaborProf = async (e) => {
     e.preventDefault();
-    const data = localStorage.getItem("UserData");
-    const decoded = Jwt(data);
-    console.log(decoded.id);
+    //  const data = localStorage.getItem("UserData");
+    //   const decoded = Jwt.decode(data);
+    //   console.log(decoded.id);
+    const varUser = localStorage.getItem("UserData");
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
+    console.log(userId.id);
     try {
       console.log("in try method");
       const res = await axios.put(
-        `http://localhost:5000/api/auth/updatesololabour/${decoded.id}`,
+        `http://localhost:5000/api/auth/updatesololabour/${userId.id}`,
         {
           address: inputValues.address,
           dob: inputValues.dob,
@@ -62,11 +67,16 @@ const UpdateSoloLabor = () => {
       });
   };
   const PreviousData = async () => {
-    const data = localStorage.getItem("UserData");
-    const decoded = Jwt(data);
-    console.log(decoded.id);
+    // const data = localStorage.getItem("UserData");
+    // const decoded = Jwt.decode(data);
+    // console.log(decoded.id);
+    const varUser = localStorage.getItem("UserData");
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
+    console.log(userId.id);
     const res = await axios.get(
-      ` http://localhost:5000/api/auth/viewprofessional/${decoded.id}`
+      ` http://localhost:5000/api/auth/viewprofessional/${userId.id}`
     );
     let prevData = res.data.user_id;
     console.log(prevData);

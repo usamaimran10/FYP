@@ -10,11 +10,16 @@ import axios from "axios";
 const SellerDashboard = () => {
   const [userName, setUsername] = useState([]);
   const getUserName = () => {
-    const data = localStorage.getItem("UserData");
-    const decoded = Jwt(data);
-    console.log(decoded.id);
-
-    return decoded.id;
+    // const data = localStorage.getItem("UserData");
+    // const decoded = Jwt.decode(data);
+    // console.log(decoded.id);
+    // return decoded.id;
+    const varUser = localStorage.getItem("UserData");
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
+    console.log(userId.id);
+    return userId.id;
   };
   const getDataFromAPI = async () => {
     const id = await getUserName();

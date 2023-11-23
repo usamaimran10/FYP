@@ -11,7 +11,7 @@ const History = () => {
   const viewAllReq = async () => {
     const BidId = localStorage.getItem("BidID");
     const varUser = localStorage.getItem("UserData");
-    const userId = Jwt(varUser);
+    const userId = Jwt.decode(varUser);
 
     try {
       const res = await axios.get(

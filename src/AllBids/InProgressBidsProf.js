@@ -8,7 +8,7 @@ const InProgressBidsProf = () => {
   const [offers, setOffers] = useState([]);
   const viewBids = async () => {
     const varUser = localStorage.getItem("UserData");
-    const userId = Jwt(varUser);
+    const userId = Jwt.decode(varUser);
     console.log(userId.id);
     const res = await axios.get(
       `http://localhost:5000/api/project/viewProfProj/${userId.id}`

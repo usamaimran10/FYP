@@ -10,7 +10,10 @@ const BidProf = () => {
 
   const viewAllReq = async () => {
     const varUser = localStorage.getItem("UserData");
-    const userId = Jwt(varUser);
+    // const userId = Jwt.decode(varUser);
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
     console.log(userId.id);
 
     try {

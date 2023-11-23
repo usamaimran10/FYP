@@ -17,9 +17,12 @@ const UploadSeller = () => {
     });
   };
   const handleAddtoProduct = async () => {
-    const UserID = window.localStorage.getItem("UserData");
-    const decode = Jwt(UserID.token);
-    console.log(decode.id);
+    // const UserID = window.localStorage.getItem("UserData");
+    // const decode = Jwt.decode(UserID.token);
+    // console.log(decode.id);
+    const varUser = window.localStorage.getItem("UserData");
+    const parsedUser = JSON.parse(varUser);
+    const userId = Jwt.decode(parsedUser.token);
     try {
       const res = await axios.post(
         "http://localhost:5000/api/product/addproduct",
@@ -29,7 +32,7 @@ const UploadSeller = () => {
           prod_detail_desc: inputValues.descp,
           prod_price: inputValues.price,
 
-          sold_by: "61adf7ffdec6270016f88373",
+          sold_by: userId,
 
           quantity: inputValues.quantity,
         }

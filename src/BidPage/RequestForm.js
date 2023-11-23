@@ -9,9 +9,16 @@ const RequestForm = () => {
   const submitBid = async (event) => {
     event.preventDefault();
     const varUser = localStorage.getItem("UserData");
-    const userId = Jwt(varUser);
-    console.log(userId.id);
+
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
+    // imp
+    console.log("USER TOKEN DECODED", userId);
+
+    console.log(userId);
     try {
+      console.log({ inputValues });
       const res = await axios.post(
         "http://localhost:5000/api/request/makerequest",
         {
@@ -30,7 +37,7 @@ const RequestForm = () => {
       );
       console.log("data");
       console.log(res.data);
-      // window.alert("Successfull:Your Request Has been Submitted");
+      window.alert("Successfull:Your Request Has been Submitted");
     } catch (err) {
       console.log(err);
     }
@@ -51,6 +58,7 @@ const RequestForm = () => {
 
   const handleChange = ({ target: { value } }, key) => {
     setInputValues({ ...inputValues, [key]: value });
+    console.log({ inputValues });
   };
 
   console.log({ inputValues });
@@ -140,17 +148,19 @@ const RequestForm = () => {
               <select
                 class="form-control"
                 id="exampleFormControlSelect1"
+                defaultValue="Contractor"
                 value={inputValues.categ}
                 onChange={(e) => handleChange(e, "categ")}
                 style={{ borderRadius: "20px", fontSize: "1.5rem" }}
               >
-                <option>Contractor</option>
+                <option></option>
                 <option>Consultant</option>
                 <option>Architecct</option>
                 <option>Electrician</option>
                 <option>Plumber</option>
                 <option>Carpentor</option>
                 <option>Painter</option>
+                <option>Contractor</option>
               </select>
             </div>
 

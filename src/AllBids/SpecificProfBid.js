@@ -10,13 +10,17 @@ const SpecificProfBid = () => {
   const [offers, setOffers] = useState([]);
 
   const viewAllReq = async () => {
-    const data = localStorage.getItem("UserData");
-    const decoded = Jwt(data);
-    console.log(decoded.id);
-
+    // const data = localStorage.getItem("UserData");
+    // const decoded = Jwt.decode(data);
+    // console.log(decoded.id);
+    const varUser = localStorage.getItem("UserData");
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
+    console.log(userId.id);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/bid/viewbids/${decoded.id}
+        `http://localhost:5000/api/bid/viewbids/${userId.id}
         `
       );
       console.log(res.data);

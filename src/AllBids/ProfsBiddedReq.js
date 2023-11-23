@@ -8,10 +8,14 @@ const ProfsBiddedReq = () => {
   const [bids, setBids] = useState([]);
 
   const viewAllReq = async () => {
+    // const varUser = localStorage.getItem("UserData");
+    // const userId = Jwt.decode(varUser);
+    // console.log(userId.id);
     const varUser = localStorage.getItem("UserData");
-    const userId = Jwt(varUser);
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
     console.log(userId.id);
-
     try {
       const res = await axios.get(
         `http://localhost:5000/api/request/viewByStatus/Completed/${userId.id}`

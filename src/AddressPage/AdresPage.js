@@ -26,7 +26,7 @@ const AdresPage = () => {
   };
   const catDetails = localStorage.getItem("checkout");
   const varUser = localStorage.getItem("UserData");
-  const userId = Jwt(varUser);
+  const userId = Jwt.decode(varUser);
   console.log(userId.id);
   const itemdetails = JSON.parse(catDetails);
   console.log(itemdetails);

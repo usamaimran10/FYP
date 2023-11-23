@@ -95,8 +95,6 @@ const RightBar = (props) => {
           <ul>
             <li>Profile</li>
             <li>Edit</li>
-            <li>Contact</li>
-            <li>Log Out</li>
           </ul>
         </div>
       </div>
@@ -130,7 +128,6 @@ const RightBar = (props) => {
               style={{
                 fontSize: "20px",
                 marginTop: "10px",
-
                 marginLeft: "10px",
               }}
             >

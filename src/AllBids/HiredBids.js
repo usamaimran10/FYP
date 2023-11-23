@@ -11,7 +11,7 @@ const HiredBids = () => {
   const viewAllReq = async () => {
     const BidId = localStorage.getItem("BidID");
     const varUser = localStorage.getItem("UserData");
-    const userId = Jwt(varUser);
+    const userId = Jwt.decode(varUser);
     console.log(userId.id);
 
     console.log(BidId);

@@ -19,7 +19,7 @@ const SignupForm = () => {
   const [ConfirmPassword, setConfirmPassword] = useState("");
   const [Email, setEmail] = useState("");
   const [PhoneNumber, setPhoneNumber] = useState("");
-  const [Category, setCategory] = useState("");
+  const [Category, setCategory] = useState("professional");
 
   const [passwordShown, setPasswordShown] = useState(false);
 
@@ -83,7 +83,7 @@ const SignupForm = () => {
       console.log("coming from local storage");
       let UserObject = localStorage.getItem("UserData");
       console.log(UserObject);
-      const decoded = Jwt(res.data.token);
+      const decoded = Jwt.decode(res.data.token);
       console.log(decoded);
     } catch (err) {
       console.log(err);

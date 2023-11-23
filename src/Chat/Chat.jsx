@@ -44,7 +44,7 @@ const Chat = () => {
   const [newMessage, setNewMessage] = useState("");
 
   const varUser = localStorage.getItem("UserData");
-  const user = Jwt(varUser);
+  const user = Jwt.decode(varUser);
   const loginId = localStorage.getItem("ChatId");
 
   const history = useHistory();

@@ -11,9 +11,14 @@ const BidOnRequest = () => {
   const ApplyBid = async (event) => {
     event.preventDefault();
     const varUser = localStorage.getItem("UserData");
-    const userId = Jwt(varUser);
+    // const userId = Jwt.decode(varUser);
+    // console.log(userId.id);
+    const parsedUser = JSON.parse(varUser);
+    console.log("TOKEN", JSON.parse(varUser));
+    const userId = Jwt.decode(parsedUser.token);
     console.log(userId.id);
     setUserId(userId.id);
+
     try {
       const res = await axios.post(
         " http://localhost:5000/api/bid/bidonrequest",

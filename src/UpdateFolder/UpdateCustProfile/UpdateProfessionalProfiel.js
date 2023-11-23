@@ -4,21 +4,26 @@ import axios from "axios";
 import Jwt from "jsonwebtoken";
 
 const UpdateProfessionalProfiel = () => {
-  const data = localStorage.getItem("UserData");
-  const decoded = Jwt(data);
+  // const data = localStorage.getItem("UserData");
+  // const decoded = Jwt.decode(data);
+  const varUser = localStorage.getItem("UserData");
+  const parsedUser = JSON.parse(varUser);
+  console.log("TOKEN", JSON.parse(varUser));
+  const userId = Jwt.decode(parsedUser.token);
+
   const [previousData, setPreviousData] = useState({});
   const [image, setImage] = useState([0]);
   const [files, setFiles] = useState("");
 
   const UpdateSellerProf = async (e) => {
     e.preventDefault();
-    console.log(decoded.id);
+    console.log(userId.id);
 
     try {
       console.log("in try method");
       console.log(inputValues);
       const res = await axios.put(
-        `http://localhost:5000/api/auth/updateprofessional/${decoded.id}`,
+        `http://localhost:5000/api/auth/updateprofessional/${userId.id}`,
         {
           dob: inputValues.dob,
           cnic: inputValues.cnic,
@@ -66,7 +71,7 @@ const UpdateProfessionalProfiel = () => {
   };
   const PreviousData = async () => {
     const res = await axios.get(
-      `http://localhost:5000/api/auth/viewprofessional/${decoded.id}`
+      `http://localhost:5000/api/auth/viewprofessional/${userId.id}`
     );
     let prevData = res.data.user_id;
     console.log(prevData);

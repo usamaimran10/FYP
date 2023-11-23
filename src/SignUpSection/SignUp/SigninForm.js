@@ -17,24 +17,31 @@ const SigninForm = () => {
   const handleApi = async (data) => {
     if (isValidEmail(data.email) && simpleValidPassword(data.password)) {
       try {
-        const res = await axios.post("http://localhost:5000/api/auth/login", {
-          phone: data.PhoneNumber,
-          email: data.email,
-          password: data.password,
-        });
+        const res = await axios
+          .post("http://localhost:5000/api/auth/login", {
+            phone: data.PhoneNumber,
+            email: data.email,
+            password: data.password,
+          })
+          .then((res) => {
+            localStorage.setItem("UserData", JSON.stringify(res.data));
+            const check = localStorage.getItem("UserData");
+            console.log({ check });
+            localStorage.setItem("ChatId", res.data.ChatId);
+            console.log(res.data);
+            console.log("coming from local storage");
+            let UserObject = localStorage.getItem("UserData");
+            console.log(UserObject);
+            const decoded = Jwt.decode(res.data.token);
+            console.log(decoded);
+            console.log("role");
+            console.log(decoded.role);
 
-        localStorage.setItem("UserData", JSON.stringify(res.data));
-        localStorage.setItem("ChatId", res.data.ChatId);
-
-        console.log("coming from local storage");
-        let UserObject = localStorage.getItem("UserData");
-        console.log(UserObject);
-        const decoded = Jwt(res.data.token);
-        console.log(decoded);
-        console.log("role");
-        console.log(decoded.role);
-
-        window.location.href = `/homepage/${decoded.role}`;
+            window.location.href = `/homepage/${decoded.role}`;
+          })
+          .catch((error) => {
+            console.log("ERROR", error);
+          });
       } catch (err) {
         window.alert(
           "Unauthorized User",
