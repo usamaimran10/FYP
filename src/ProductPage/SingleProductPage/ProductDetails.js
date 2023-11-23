@@ -19,6 +19,7 @@ const ProductDetails = (props) => {
     const res = await axios.get(
       `https://fyp-backend-gules.vercel.app/api/product/viewproduct/${prodID}`
     );
+
     setImage(res.data.main_image);
     setName(res.data.prod_brand);
     setDetail(res.data.prod_detail_desc);
@@ -49,9 +50,7 @@ const ProductDetails = (props) => {
             marginLeft: "200px",
             marginRight: "200px",
           }}
-        >
-          {detail}
-        </p>
+        ></p>
       </div>
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
@@ -61,11 +60,23 @@ const ProductDetails = (props) => {
         </h1>
       </div>
       <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "10px",
+          gap: "10px",
+        }}
       >
         <h1>
-          Seller: <span style={{ fontWeight: "bold" }}>{seller}</span>
+          <span style={{ fontWeight: "bold" }}> {detail}</span>
         </h1>
+        {seller && (
+          <h1>
+            <span style={{ fontWeight: "bold" }}> {seller}</span>
+          </h1>
+        )}
       </div>
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}

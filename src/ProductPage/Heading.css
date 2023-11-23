@@ -1,5 +1,7 @@
 .HeadingCmpt {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .heading {
   color: #393e46;
@@ -8,7 +10,7 @@
   margin-top: 20px;
 }
 .cart {
-  margin-top: 25px;
+  margin-top: 28px !important;
   margin-left: 100px;
   color: #393e46;
   text-decoration: none;
@@ -19,7 +21,7 @@
   color: #232527;
   margin-top: 20px;
   text-decoration: none;
-  margin-left: 50px;
+  margin-left: 5px !important;
 }
 .searchProduct {
   border-radius: 50px;

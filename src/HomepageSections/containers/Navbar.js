@@ -61,7 +61,7 @@ const Navbar = (props) => {
   return (
     <div class="topnav">
       <a className="title" href="#about">
-        E-Construct
+        E-Contractor
       </a>
 
       <div className="Navbar">

@@ -48,8 +48,8 @@ const Heading = () => {
   }, [search]);
   return (
     <div className="HeadingCmpt">
-      <h1 className="heading">E-Contruct</h1>
-      <div className="SearchBar">
+      <h1 className="heading">E-Contractor</h1>
+      {/* <div className="SearchBar">
         <Form.Control
           onChange={(e) => {
             setSearch(e.target.value);
@@ -60,17 +60,14 @@ const Heading = () => {
           type="text"
           placeholder="Search Product ..."
         />
-      </div>
+      </div> */}
 
-      <a
-        className="cart"
-        href="#"
-        onClick={GotoCart}
-        style={{ fontSize: "1.5rem" }}
-      >
-        Cart
-      </a>
-      <img className="bag" src="bag.png" alt="this is bag"></img>
+      <div onClick={GotoCart} style={{ cursor: "pointer", display: "flex" }}>
+        <a className="cart" href="#" style={{ fontSize: "1.5rem" }}>
+          Cart
+        </a>
+        <img className="bag" src="bag.png" alt="this is bag"></img>
+      </div>
     </div>
   );
 };

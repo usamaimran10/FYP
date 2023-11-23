@@ -19,8 +19,16 @@ const Slider = ({ slide }) => {
   }
   return (
     <section className="slider">
-      <AiFillLeftCircle className="left-arrow" onClick={prevSlide} />
-      <AiFillRightCircle className="right-arrow" onClick={nextSlide} />
+      <AiFillLeftCircle
+        color="#393e46"
+        className="left-arrow"
+        onClick={prevSlide}
+      />
+      <AiFillRightCircle
+        color="#393e46"
+        className="right-arrow"
+        onClick={nextSlide}
+      />
       {SliderData.map((slide, index) => {
         return (
           <div

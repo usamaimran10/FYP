@@ -18,18 +18,16 @@ const LandingPage = () => {
   return (
     <>
       <div>
-        <Navbar />
-        <h1
-          style={{ fontSize: "3rem", textAlign: "center", marginTop: "20px" }}
-        >
-          Welcome to <span style={{ fontWeight: "bold" }}>E-Construct</span>
+        {/* <Navbar /> */}
+        <h1 style={{ fontSize: "3rem", textAlign: "center", marginTop: "4%" }}>
+          Welcome to <span style={{ fontWeight: "bold" }}>E-Contractor</span>
         </h1>
         <div
           className="container-fluid"
           style={{
             display: "flex",
             justifyContent: "center",
-            marginTop: "30px",
+            marginTop: "4%",
           }}
         >
           <div

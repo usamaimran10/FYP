@@ -9,6 +9,14 @@ export const SliderData = [
   },
   {
     image:
-      "https://res.cloudinary.com/niaxeecomsats/image/upload/v1638290659/ConstructPak/istockphoto-1267010934-170667a_ne5u7x.jpg",
+      "https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/8865389/pexels-photo-8865389.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/435894/pexels-photo-435894.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
   },
 ];

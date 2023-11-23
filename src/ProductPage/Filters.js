@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import ReactStars from "react-rating-stars-component";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { filterActions } from "../Store/filter";
-import { render } from "react-dom";
 
 const Filters = (props) => {
   const searchFilter = () => {
@@ -25,8 +23,7 @@ const Filters = (props) => {
 
   return (
     <>
-      <h1 style={{ fontSize: "3rem", marginTop: "20PX" }}>Filters</h1>
-      <div className="dropdown">
+      <div style={{ margin: "20px" }}>
         <button
           style={{
             fontSize: "2rem",
@@ -40,37 +37,8 @@ const Filters = (props) => {
         >
           {props.name}
         </button>
-        <div
-          className={`dropdown-menu ${dropdown ? "show" : ""}`}
-          aria-labelledby="dropdownMenuButton"
-        >
-          <a className="dropdown-item" href="#">
-            Delete
-          </a>
-          <a className="dropdown-item" href="#">
-            Pin to your Profile
-          </a>
-        </div>
       </div>
 
-      <div
-        class="form-check form-switch"
-        style={{ fontSize: "2rem", marginTop: "20px", size: "30px" }}
-      >
-        <input
-          style={{ width: "20px", height: "20px" }}
-          class="form-check-input"
-          type="checkbox"
-          id="flexSwitchCheckDefault"
-        />
-        <label
-          class="form-check-label"
-          for="flexSwitchCheckDefault"
-          style={{ marginLeft: "20px" }}
-        >
-          Discount
-        </label>
-      </div>
       {/* <div>
         <select name="Location" id="Location" required>
           <option value="" disabled selected>
@@ -98,27 +66,6 @@ const Filters = (props) => {
           <option value="Chiniot">Chiniot</option>
         </select>
       </div> */}
-
-      <div style={{ marginTop: "15px" }}>
-        <label style={{ fontWeight: "bold", fontSize: "1.5rem" }}>Rating</label>
-        <input
-          type="text"
-          placeholder="1-5"
-          style={{ width: "40px", marginLeft: "10px", fontSize: "1.5rem" }}
-          onChange={(e) => {
-            setRating(e.target.value);
-          }}
-          value={rating}
-        />
-        <ReactStars count={5} size={24} activeColor="#ffd700" />
-      </div>
-      <button
-        onClick={searchFilter}
-        className="btn btn-primary"
-        style={{ fontSize: "1.5rem" }}
-      >
-        Search
-      </button>
     </>
   );
 };

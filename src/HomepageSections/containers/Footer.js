@@ -8,7 +8,7 @@ const Footer = () => {
       <MDBFooter color="white" className="font-small pt-4 mt-4">
         <MDBContainer fluid className="text-center text-md-left">
           <div className="center-content">
-            <h5 className="title">E-Construct</h5>
+            <h5 className="title">E-Contractor</h5>
             <p style={{ fontSize: "1.5rem" }}>
               Here you can use rows and columns here to organize your footer
               content.Lorem Ipsum is simply dummy text of the printing and

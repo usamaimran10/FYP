@@ -30,7 +30,7 @@ const Sidebar = () => {
               className="text-decoration-none"
               style={{ color: "inherit" }}
             >
-              E-Construct
+              E-Contractor
             </a>
           </CDBSidebarHeader>
           <CDBSidebarContent className="sidebar-content">

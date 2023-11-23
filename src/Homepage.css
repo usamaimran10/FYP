@@ -1,3 +1,7 @@
+.Homepage {
+  width: 100% !important;
+}
+
 .card {
   border-radius: 50px;
   border: rgba(0, 0, 0, 0.472) solid 5px;

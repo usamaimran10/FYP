@@ -4,7 +4,7 @@ import "./Heading.css";
 const Heading = () => {
   return (
     <div>
-      <h1 className="heading">E-Construct</h1>
+      <h1 className="heading">E-Contractor</h1>
     </div>
   );
 };

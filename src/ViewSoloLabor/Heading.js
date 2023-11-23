@@ -53,8 +53,8 @@ const Heading = () => {
 
   return (
     <div className="HeadingCmpt">
-      <h1 className="heading">E-Contruct</h1>
-      <div className="SearchBar">
+      <h1 className="heading">E-Contractor</h1>
+      {/* <div className="SearchBar">
         <Form.Control
           onChange={(e) => {
             setSearch(e.target.value);
@@ -64,7 +64,7 @@ const Heading = () => {
           type="text"
           placeholder="Search Product ..."
         />
-      </div>
+      </div> */}
     </div>
   );
 };

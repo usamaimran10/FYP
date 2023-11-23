@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <div class="topnav">
       <a className="title" href="#about">
-        E-Construct
+        E-Contractor
       </a>
 
       <div className="Navbar">
@@ -44,8 +44,6 @@ const Navbar = () => {
           <BsFillPersonFill />
         </a>
       </div>
-      {open ? closeIcon : hamBurger}
-      <a>Categories</a>
     </div>
   );
 };

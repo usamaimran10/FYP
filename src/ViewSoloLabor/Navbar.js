@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div class="topnav">
       <a className="title" href="#about">
-        E-Construct
+        E-Contractor
       </a>
 
       <div className="Navbar">
@@ -25,8 +25,6 @@ const Navbar = () => {
           <BsFillPersonFill />
         </a>
       </div>
-
-      <a>Categories</a>
     </div>
   );
 };

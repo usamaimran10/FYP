@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <div class="topnav container-fluid">
       <a className="title" href="#about">
-        E-Construct
+        E-Contractor
       </a>
 
       <div className="Navbar">
