@@ -80,8 +80,6 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            {/* Set the default route to redirect to /landingpage */}
-            <Redirect exact from="/" to="/landingpage" />
             {isAuthenticated ? (
               <>
                 <Route exact path="/cp_admin" component={AdminDashboard} />
@@ -196,6 +194,7 @@ function App() {
               </>
             ) : (
               <>
+                <Redirect exact from="/" to="/landingpage" />
                 <Route exact path="/landingpage" component={LandingPage} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/signin" component={Signin} />
