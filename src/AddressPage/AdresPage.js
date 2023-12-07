@@ -50,6 +50,7 @@ const AdresPage = () => {
         }
       );
       console.log(res.data);
+      window.alert("Successfull");
     } catch (err) {
       console.log(err);
     }
