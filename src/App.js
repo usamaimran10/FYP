@@ -80,6 +80,8 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
+            <Redirect exact from="/" to="/landingpage" />
+
             {isAuthenticated ? (
               <>
                 <Route exact path="/cp_admin" component={AdminDashboard} />
@@ -191,10 +193,12 @@ function App() {
                   path="/updateProfessionalProfile"
                   component={UpdateProfessionalProfiel}
                 />{" "}
+                <Route exact path="/landingpage" component={LandingPage} />
+                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/signin" component={Signin} />
               </>
             ) : (
               <>
-                <Redirect exact from="/" to="/landingpage" />
                 <Route exact path="/landingpage" component={LandingPage} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/signin" component={Signin} />
