@@ -17,6 +17,16 @@ const RequestForm = () => {
     console.log("USER TOKEN DECODED", userId);
 
     console.log(userId);
+    // Validate minprice and maxprice
+    if (inputValues.minprice > inputValues.maxprice) {
+      window.alert("Minimum price should not be greater than Maximum price");
+      return;
+    }
+
+    if (inputValues.minprice < 0 && inputValues.maxprice < 0) {
+      window.alert("price should be positive");
+      return;
+    }
     try {
       console.log({ inputValues });
       const res = await axios.post(
@@ -356,7 +366,7 @@ const RequestForm = () => {
                 />
               </div>
             </div>
-            <div style={{ marginTop: "30PX" }}>
+            {/* <div style={{ marginTop: "30PX" }}>
               <label
                 for="exampleFormControlInput1"
                 style={{
@@ -382,7 +392,7 @@ const RequestForm = () => {
                   }}
                 />
               </div>
-            </div>
+            </div> */}
 
             <div
               style={{

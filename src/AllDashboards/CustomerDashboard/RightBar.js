@@ -74,10 +74,7 @@ const RightBar = (props) => {
           style={{ marginTop: "20px", cursor: "pointer" }}
         >
           <ul>
-            <li>Profile</li>
             <li>Edit</li>
-            <li>Contact</li>
-            <li>Log Out</li>
           </ul>
         </div>
       </div>

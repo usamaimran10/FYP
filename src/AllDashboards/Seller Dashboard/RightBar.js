@@ -66,10 +66,7 @@ const RightBar = (props) => {
           style={{ marginTop: "20px", fontSize: "1.5rem" }}
         >
           <ul>
-            <li>Profile</li>
             <li>Edit</li>
-            <li>Contact</li>
-            <li>Log Out</li>
           </ul>
         </div>
       </div>

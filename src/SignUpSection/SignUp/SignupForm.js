@@ -1,80 +1,44 @@
 import React from "react";
 import "./SignUpForm.css";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import GoogleLogin from "react-google-login";
 import Jwt from "jsonwebtoken";
-
 import axios from "axios";
 
 const SignupForm = () => {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
   const responseGoogle = (response) => {
     console.log(response);
     console.log(response.profileObj);
-  };
-  const [Username, setUsername] = useState("");
-  const [Password, setPassword] = useState("");
-  const [ConfirmPassword, setConfirmPassword] = useState("");
-  const [Email, setEmail] = useState("");
-  const [PhoneNumber, setPhoneNumber] = useState("");
-  const [Category, setCategory] = useState("professional");
-
-  const [passwordShown, setPasswordShown] = useState(false);
-
-  const isValidEmail = (email) => {
-    if (email.length > 0) {
-      const re =
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(email).toLowerCase());
-    } else {
-      return true;
-    }
-  };
-
-  const simpleValidPassword = (password) => {
-    if (password.length > 5) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-  const confirmPassword = (Password, ConfirmPassword) => {
-    if (
-      Password.length > 5 &&
-      ConfirmPassword.length > 5 &&
-      Password === ConfirmPassword
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-  const ValidPhoneNumber = (PhoneNumber) => {
-    if (PhoneNumber.length === 11) {
-      return true;
-    } else {
-      return false;
-    }
   };
 
   const ClickLogin = () => {
     window.location.href = "/signin";
   };
-  async function Signup(event) {
-    event.preventDefault();
 
+  async function Signup(data) {
     try {
       console.log("in try method");
       const res = await axios.post(
         "https://fyp-backend-gules.vercel.app/api/auth/register",
         {
-          fullName: Username,
-          email: Email,
-          phone: PhoneNumber,
-          password: Password,
-          category: Category,
+          fullName: data.username,
+          email: data.email,
+          phone: data.phoneNumber,
+          password: data.password,
+          category: data.category,
         }
       );
 
@@ -92,115 +56,170 @@ const SignupForm = () => {
       console.log(err);
     }
   }
+
   return (
     <div className="SignUpForm">
       <div className="Container">
-        <form>
+        <form onSubmit={handleSubmit(Signup)}>
           <h3 style={{ fontSize: "22px" }}>Sign Up</h3>
           <div className="row">
             <div className="column">
               <div className="form-group">
                 <label style={{ fontSize: "2rem" }}>Username</label>
-                <input
-                  className="input"
-                  type="text"
-                  className="form-control"
-                  placeholder="Username"
+                <Controller
                   name="username"
-                  style={{ fontSize: "1.5rem" }}
-                  value={Username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      className={`input form-control ${
+                        errors.username ? "is-invalid" : ""
+                      }`}
+                      type="text"
+                      placeholder="Username"
+                      style={{ fontSize: "1.5rem" }}
+                      {...field}
+                    />
+                  )}
                 />
+                {errors.username && (
+                  <span className="invalid-feedback">
+                    {errors.username.message}
+                  </span>
+                )}
               </div>
 
               <div className="form-group">
                 <label style={{ fontSize: "2rem" }}>Password</label>
-
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Password"
+                <Controller
                   name="password"
-                  style={{ fontSize: "1.5rem" }}
-                  value={Password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      type="password"
+                      className={`form-control ${
+                        errors.password ? "is-invalid" : ""
+                      }`}
+                      placeholder="Password"
+                      style={{ fontSize: "1.5rem" }}
+                      {...field}
+                    />
+                  )}
                 />
+                {errors.password && (
+                  <span className="invalid-feedback">
+                    {errors.password.message}
+                  </span>
+                )}
               </div>
 
               <div className="form-group">
                 <label style={{ fontSize: "2rem" }}>Confirm Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Confirm Password"
-                  value={ConfirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  style={{ fontSize: "1.5rem" }}
+                <Controller
+                  name="confirmPassword"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      type="password"
+                      className={`form-control ${
+                        errors.confirmPassword ? "is-invalid" : ""
+                      }`}
+                      placeholder="Confirm Password"
+                      style={{ fontSize: "1.5rem" }}
+                      {...field}
+                    />
+                  )}
                 />
+                {errors.confirmPassword && (
+                  <span className="invalid-feedback">
+                    {errors.confirmPassword.message}
+                  </span>
+                )}
               </div>
 
               <div className="form-group">
                 <label style={{ fontSize: "2rem" }}>Email address</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Enter email"
-                  style={{ fontSize: "1.5rem" }}
-                  value={Email}
-                  onChange={(e) => setEmail(e.target.value)}
+                <Controller
+                  name="email"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      type="email"
+                      className={`form-control ${
+                        errors.email ? "is-invalid" : ""
+                      }`}
+                      placeholder="Enter email"
+                      style={{ fontSize: "1.5rem" }}
+                      {...field}
+                    />
+                  )}
                 />
+                {errors.email && (
+                  <span className="invalid-feedback">
+                    {errors.email.message}
+                  </span>
+                )}
               </div>
             </div>
 
             <div className="column">
               <div className="form-group">
                 <label style={{ fontSize: "2rem" }}>Phone Number</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Phone Number"
-                  style={{ fontSize: "1.5rem" }}
-                  value={PhoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
+                <Controller
+                  name="phoneNumber"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      type="number"
+                      className={`form-control ${
+                        errors.phoneNumber ? "is-invalid" : ""
+                      }`}
+                      placeholder="Phone Number"
+                      style={{ fontSize: "1.5rem" }}
+                      {...field}
+                    />
+                  )}
                 />
+                {errors.phoneNumber && (
+                  <span className="invalid-feedback">
+                    {errors.phoneNumber.message}
+                  </span>
+                )}
               </div>
 
               <div className="form-group">
                 <label style={{ fontSize: "2rem" }}>Categories</label>
-                <select
-                  className="form-control"
-                  placeholder="Categories"
-                  value={Category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  style={{ fontSize: "1.5rem" }}
-                >
-                  <option value="professional">Professional</option>
-                  <option value="seller">Seller</option>
-                  <option value="customer">Customer</option>
-                  <option value="solo_labour">Solo Labour</option>
-                </select>
-              </div>
-              {/* 
-              <div className="form-group" id="signupWith">
-                <label style={{ fontSize: "2rem" }}>
-                  ------Or Sign Up with------
-                </label>
-                <GoogleLogin
-                  clientId="581948107699-rlre4euckimnhjiqqb81tr4pdjdnra2u.apps.googleusercontent.com"
-                  buttonText="Sign Up With Google"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                  cookiePolicy={"single_host_origin"}
+                <Controller
+                  name="category"
+                  control={control}
+                  render={({ field }) => (
+                    <select
+                      className={`form-control ${
+                        errors.category ? "is-invalid" : ""
+                      }`}
+                      placeholder="Categories"
+                      style={{ fontSize: "1.5rem" }}
+                      {...field}
+                    >
+                      <option value="professional">Professional</option>
+                      <option value="seller">Seller</option>
+                      <option value="customer">Customer</option>
+                    </select>
+                  )}
                 />
-              </div> */}
+                {errors.category && (
+                  <span className="invalid-feedback">
+                    {errors.category.message}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
 
           <div className="ButtonContainer">
             <button
+              type="submit"
               className="btn btn-primary btn-block"
               style={{ height: "50px", fontSize: "2rem", borderRadius: "5px" }}
-              onClick={Signup}
             >
               Sign Up
             </button>
@@ -213,5 +232,24 @@ const SignupForm = () => {
     </div>
   );
 };
-
+const validationSchema = yup.object({
+  username: yup.string().required("Username is required"),
+  email: yup
+    .string()
+    .email("Invalid email address")
+    .matches(/\.com$/, "Email must contain '.com'")
+    .required("Email is required"),
+  phoneNumber: yup
+    .string()
+    .matches(/^03\d{9}$/, "Invalid phone number")
+    .required("Phone number is required"),
+  password: yup
+    .string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Passwords must match"),
+  category: yup.string(),
+});
 export default SignupForm;

@@ -26,6 +26,11 @@ const UploadSeller = () => {
     const varUser = window.localStorage.getItem("UserData");
     const parsedUser = JSON.parse(varUser);
     const userId = Jwt.decode(parsedUser.token);
+    if (inputValues.price < 0) {
+      alert("Price cannot be negative");
+      return; // Don't proceed with the API call
+    }
+
     try {
       const res = await axios.post(
         "https://fyp-backend-gules.vercel.app/api/product/addproduct",
@@ -42,6 +47,8 @@ const UploadSeller = () => {
       );
       console.log("data");
       console.log(res);
+
+      window.alert("Successfull:Your Request Has been Submitted");
     } catch (err) {
       console.log(err);
     }

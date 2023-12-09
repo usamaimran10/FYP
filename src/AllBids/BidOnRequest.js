@@ -18,7 +18,15 @@ const BidOnRequest = () => {
     const userId = Jwt.decode(parsedUser.token);
     console.log(userId.id);
     setUserId(userId.id);
-
+    // Validate minprice and maxprice
+    if (inputValues.minprice > inputValues.maxprice) {
+      window.alert("Minimum price should not be greater than Maximum price");
+      return;
+    }
+    if (inputValues.minprice < 0 && inputValues.maxprice < 0) {
+      window.alert("price should be positive");
+      return;
+    }
     try {
       const res = await axios.post(
         " https://fyp-backend-gules.vercel.app/api/bid/bidonrequest",
@@ -204,7 +212,7 @@ const BidOnRequest = () => {
                 </div>
               </div>
 
-              <div style={{ marginTop: "30PX" }}>
+              {/* <div style={{ marginTop: "30PX" }}>
                 <label
                   for="exampleFormControlInput1"
                   style={{
@@ -231,7 +239,7 @@ const BidOnRequest = () => {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
 
               <div
                 style={{
