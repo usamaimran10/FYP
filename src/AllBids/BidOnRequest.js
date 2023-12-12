@@ -27,6 +27,10 @@ const BidOnRequest = () => {
       window.alert("price should be positive");
       return;
     }
+    if (inputValues.duration <= 0) {
+      window.alert("Days should be a positive number");
+      return;
+    }
     try {
       const res = await axios.post(
         " https://fyp-backend-gules.vercel.app/api/bid/bidonrequest",
@@ -46,6 +50,7 @@ const BidOnRequest = () => {
       console.log(res.data);
 
       window.alert("Successfull");
+      window.location.href = "/homepage/professional";
     } catch (err) {
       console.log(err);
     }

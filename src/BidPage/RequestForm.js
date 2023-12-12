@@ -48,6 +48,7 @@ const RequestForm = () => {
       console.log("data");
       console.log(res.data);
       window.alert("Successfull:Your Request Has been Submitted");
+      window.location.href = "/homepage/customer";
     } catch (err) {
       console.log(err);
     }
@@ -67,6 +68,17 @@ const RequestForm = () => {
   });
 
   const handleChange = ({ target: { value } }, key) => {
+    if (key === "duration" && parseInt(value) < 0) {
+      // Validate days not negative
+      window.alert("Days cannot be negative");
+      return;
+    }
+
+    if (key === "city" && /\d/.test(value)) {
+      // Validate city has no numbers
+      window.alert("City cannot contain numbers");
+      return;
+    }
     setInputValues({ ...inputValues, [key]: value });
     console.log({ inputValues });
   };

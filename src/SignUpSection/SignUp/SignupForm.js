@@ -16,6 +16,7 @@ const SignupForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
+    defaultValues: { category: "professional" },
     resolver: yupResolver(validationSchema),
   });
 
@@ -250,6 +251,6 @@ const validationSchema = yup.object({
   confirmPassword: yup
     .string()
     .oneOf([yup.ref("password"), null], "Passwords must match"),
-  category: yup.string(),
+  category: yup.string().required("Password is required"),
 });
 export default SignupForm;
