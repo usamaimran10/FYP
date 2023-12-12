@@ -39,7 +39,7 @@ const SuccessHired = (props) => {
           nice and tidy.
         </p>
       </div>
-      <div
+      {/* <div
         style={{
           display: "flex",
           justifyContent: "center",
@@ -56,7 +56,7 @@ const SuccessHired = (props) => {
         >
           Go to Chat
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

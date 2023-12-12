@@ -288,7 +288,7 @@ const ViewReqOnBid = () => {
                     />
                   </div>
                 </div>
-                <div style={{ marginTop: "30PX" }}>
+                {/* <div style={{ marginTop: "30PX" }}>
                   <label
                     for="exampleFormControlInput1"
                     style={{
@@ -315,7 +315,7 @@ const ViewReqOnBid = () => {
                       }}
                     />
                   </div>
-                </div>
+                </div> */}
 
                 <div
                   style={{
