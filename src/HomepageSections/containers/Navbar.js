@@ -22,6 +22,12 @@ const Navbar = (props) => {
   const GotoLanding = () => {
     window.location.href = "/landingpage";
   };
+  const GotoSignIn = () => {
+    window.location.href = "/signin";
+  };
+  const GotoSignUp = () => {
+    window.location.href = "/signup";
+  };
   const GotoContact = () => {
     window.location.href = "/contactpage";
   };
@@ -78,7 +84,16 @@ const Navbar = (props) => {
         <a href="#contact" onClick={GotoContact}>
           Contact
         </a>
-
+        {category == undefined && (
+          <a href="#landingPage" onClick={GotoSignUp}>
+            Sing Up
+          </a>
+        )}
+        {category == undefined && (
+          <a href="#landingPage" onClick={GotoSignIn}>
+            Sing In
+          </a>
+        )}
         <BsFillPersonFill
           style={{
             cursor: "pointer",
@@ -88,9 +103,11 @@ const Navbar = (props) => {
           }}
           onClick={GotoDashboard}
         />
-        <a href="#landingpage" onClick={GotoLanding}>
-          Log Out
-        </a>
+        {category != undefined && (
+          <a href="#landingpage" onClick={GotoLanding}>
+            Log Out
+          </a>
+        )}
       </div>
     </div>
   );

@@ -1,20 +1,20 @@
-.slider {
+/* .slider {
   position: relative;
   height: 100vh;
   max-width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-left: 200px;
-  margin-top: 50px; */
-}
+  margin-left: 200px;
+  margin-top: 50px;
+} */
 
 .image {
-  width: 600px;
-  height: 600px;
-  border-radius: 10px;
+  min-width: 100%;
+  min-height: 100%;
+  border-radius: 0px !important;
 }
-.right-arrow {
+/* .right-arrow {
   position: absolute;
   top: 50%;
   right: 10%;
@@ -46,4 +46,4 @@
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.08);
-}
+} */

@@ -63,6 +63,7 @@ import NewPassword from "./SignUpSection/ForgotPassword/NewPassword";
 import Chat from "./Chat/Chat";
 import {} from "react-router-dom";
 import Jwt from "jsonwebtoken";
+import CustomerDashboardMain from "./AllDashboards/CustomerDashboard/CustomerDashboardMain";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
@@ -80,7 +81,7 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Redirect exact from="/" to="/landingpage" />
+            <Redirect exact from="/" to="/GuestHomepage" />
 
             {isAuthenticated ? (
               <>

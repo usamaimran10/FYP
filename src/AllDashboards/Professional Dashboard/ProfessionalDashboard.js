@@ -7,6 +7,8 @@ import RightBar from "./RightBar";
 import Jwt from "jsonwebtoken";
 
 import axios from "axios";
+import ProfessionalDashboardMain from "./ProfessionalDashboardMain";
+import { Box } from "@mui/material";
 
 const ProfessionalDashboard = () => {
   const [userName, setUsername] = useState([]);
@@ -49,23 +51,9 @@ const ProfessionalDashboard = () => {
     getDataFromAPI();
   });
   return (
-    <div>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-2">
-            <Sidebar />
-          </div>
-          <div className="col-7">
-            <CreateGig name={userName} />
-            <History />
-            <Reminder />
-          </div>
-          <div className="col-3">
-            <RightBar name={userName} image={image} />
-          </div>
-        </div>
-      </div>
-    </div>
+    <Box>
+      <ProfessionalDashboardMain name={userName} />
+    </Box>
   );
 };
 

@@ -18,30 +18,14 @@ const Slider = ({ slide }) => {
     return null;
   }
   return (
-    <section className="slider">
-      <AiFillLeftCircle
-        color="#393e46"
-        className="left-arrow"
-        onClick={prevSlide}
-      />
-      <AiFillRightCircle
-        color="#393e46"
-        className="right-arrow"
-        onClick={nextSlide}
-      />
-      {SliderData.map((slide, index) => {
-        return (
-          <div
-            className={index === current ? "slide active" : "slide"}
-            key={index}
-          >
-            {index === current && (
-              <img src={slide.image} alt="travel img" className="image"></img>
-            )}
-            ;
-          </div>
-        );
-      })}
+    <section>
+      <div>
+        <img
+          src="https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="travel img"
+          className="image"
+        />
+      </div>
     </section>
   );
 };

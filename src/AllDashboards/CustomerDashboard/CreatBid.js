@@ -13,18 +13,6 @@ const CreatBid = (props) => {
 
   return (
     <div>
-      <h1
-        style={{
-          marginLeft: "40px",
-          fontSize: "1.8rem",
-          marginTop: "30px",
-          color: "#393E46",
-          fontWeight: "bold",
-        }}
-      >
-        Your Dashboard
-      </h1>
-
       <div style={{ display: "inline-flex" }}>
         <button
           style={{

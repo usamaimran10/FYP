@@ -7,6 +7,8 @@ import RightBar from "./RightBar";
 import Jwt from "jsonwebtoken";
 
 import axios from "axios";
+import CustomerDashboardMain from "./CustomerDashboardMain";
+import { Box } from "@mui/material";
 
 const Dashboard = () => {
   const [userName, setUsername] = useState([]);
@@ -48,21 +50,9 @@ const Dashboard = () => {
   });
 
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-2">
-          <Sidebar />
-        </div>
-        <div className="col-7">
-          <CreatBid name={userName} />
-          <History />
-          <Reminder />
-        </div>
-        <div className="col-3">
-          <RightBar name={userName} />
-        </div>
-      </div>
-    </div>
+    <Box>
+      <CustomerDashboardMain name={userName} />
+    </Box>
   );
 };
 

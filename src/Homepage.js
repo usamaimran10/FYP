@@ -17,6 +17,7 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 
 const Homepage = () => {
   const { role } = useParams();
+
   return (
     <div className="Homepage">
       <Navbar role={role} />

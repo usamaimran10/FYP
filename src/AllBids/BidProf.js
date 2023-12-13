@@ -5,6 +5,7 @@ import Jwt from "jsonwebtoken";
 
 import Navbar from "../HomepageSections/containers/Navbar";
 import AllRequestforProfs from "./AllRequestforProfs";
+import { Box, Typography } from "@mui/material";
 const BidProf = () => {
   const [offers, setOffers] = useState([]);
 
@@ -30,28 +31,35 @@ const BidProf = () => {
     viewAllReq();
   }, []);
   return (
-    <div>
-      <div style={{ textAlign: "center" }}>
-        <h1 style={{ fontSize: "4rem", fontWeight: "bold", marginTop: "30px" }}>
+    <Box>
+      <Box sx={{ textAlign: "center" }}>
+        <Typography
+          sx={{ fontSize: "4rem", fontWeight: "bold", marginTop: "30px" }}
+        >
           All Requests Around You
-        </h1>
-      </div>
-      <div className="row">
-        {console.log(offers)}
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          gap: "40px",
+          marginTop: "20px",
+          padding: "20px",
+        }}
+      >
         {offers.map((offer, i) => {
           return (
-            <div key={i}>
-              <AllRequestforProfs
-                name={offer.title}
-                description={offer.description}
-                type={offer.professional_category}
-                id={offer._id}
-              />
-            </div>
+            <AllRequestforProfs
+              name={offer.title}
+              key={i}
+              description={offer.description}
+              type={offer.professional_category}
+              id={offer._id}
+            />
           );
         })}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

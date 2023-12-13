@@ -78,30 +78,6 @@ const LandingPage = () => {
               Log In
             </h2>
           </div>
-          <div
-            onClick={ClickHomePage}
-            style={{
-              width: "300px",
-              height: "250px",
-              backgroundColor: "#AAD8D3",
-              marginTop: "20px",
-              marginLeft: "10PX",
-              cursor: "pointer",
-              borderRadius: "10px",
-            }}
-          >
-            <h2
-              style={{
-                color: "#393E46",
-                textAlign: "center",
-                verticalAlign: "middle",
-                lineHeight: "220px",
-                fontSize: "4rem",
-              }}
-            >
-              View as Guest
-            </h2>
-          </div>
         </div>
       </div>
     </>

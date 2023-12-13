@@ -20,7 +20,9 @@ const ViewReqOnBid = () => {
   useEffect(() => {
     viewFullReq();
   }, []);
-
+  const handleBack = () => {
+    window.location.href = "/specificProfbid";
+  };
   console.log({ request });
   return (
     <div>
@@ -51,7 +53,13 @@ const ViewReqOnBid = () => {
               </label>
             </div>
             <div style={{ display: "flex", marginLeft: "30px" }}>
-              <form style={{ justifyContent: "center", marginTop: "30px" }}>
+              <form
+                style={{
+                  justifyContent: "center",
+                  marginTop: "30px",
+                  marginBottom: "30px",
+                }}
+              >
                 <div class="form-group">
                   <label
                     for="exampleFormControlInput1"
@@ -316,33 +324,8 @@ const ViewReqOnBid = () => {
                     />
                   </div>
                 </div> */}
-
-                <div
-                  style={{
-                    justifyContent: "center",
-                    marginLeft: "200px",
-                    marginTop: "30px",
-                  }}
-                >
-                  <button
-                    style={{
-                      backgroundColor: "#00ADB5",
-                      border: "none",
-                      borderRadius: "5PX",
-                      color: "white",
-                      fontSize: "2rem",
-                      marginBottom: "20px",
-                      padding: "10px",
-                    }}
-                  >
-                    Back
-                  </button>
-                </div>
               </form>
             </div>
-          </div>
-          <div>
-            <h1></h1>
           </div>
         </div>
       </div>
