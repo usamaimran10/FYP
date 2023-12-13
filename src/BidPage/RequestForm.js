@@ -18,15 +18,16 @@ const RequestForm = () => {
 
     console.log(userId);
     // Validate minprice and maxprice
-    if (inputValues.minprice > inputValues.maxprice) {
-      window.alert("Minimum price should not be greater than Maximum price");
-      return;
-    }
+  if (parseInt(inputValues.minprice) > parseInt(inputValues.maxprice)) {
+    window.alert("Minimum price should not be greater than Maximum price");
+    return;
+  }
 
-    if (inputValues.minprice < 0 && inputValues.maxprice < 0) {
-      window.alert("price should be positive");
-      return;
-    }
+  if (parseInt(inputValues.minprice) < 0 && parseInt(inputValues.maxprice) < 0) {
+    window.alert("Price should be positive");
+    return;
+  }
+
     try {
       console.log({ inputValues });
       const res = await axios.post(
