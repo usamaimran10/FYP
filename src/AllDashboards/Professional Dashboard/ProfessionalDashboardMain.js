@@ -90,6 +90,7 @@ const ProfessionalDashboardMain = (props) => {
             display: "flex",
             gap: "40px",
             marginTop: "20px",
+            padding: "20px",
           }}
         >
           {offers.map((offer, i) => {

@@ -37,7 +37,7 @@ const BidOnRequest = () => {
     }
     try {
       const res = await axios.post(
-        " https://fyp-backend-gules.vercel.app/api/bid/bidonrequest",
+        "https://fyp-backend-gules.vercel.app/api/bid/bidonrequest",
         {
           description: inputValues.descp,
           duration: inputValues.duration,
@@ -53,10 +53,25 @@ const BidOnRequest = () => {
       console.log("data");
       console.log(res.data);
 
-      window.alert("Successfull");
-      window.location.href = "/homepage/professional";
+      if (res.status === 200) {
+        // Handle success
+        window.alert("Successful");
+        window.location.href = "/homepage/professional";
+      } else {
+        // Handle error
+        throw new Error(`Request failed with status code ${res.status}`);
+      }
+      console.log(res);
     } catch (err) {
-      console.log(err);
+      console.error(err);
+
+      if (err.response && err.response.data && err.response.data.error) {
+        // If the response has an error message, show it in the alert
+        window.alert(err.response.data.error);
+      } else {
+        // If there is no specific error message, show a generic message
+        window.alert("Request failed with status code " + err.response.status);
+      }
     }
   };
 

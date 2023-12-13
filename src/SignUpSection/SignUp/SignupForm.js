@@ -242,7 +242,7 @@ const validationSchema = yup.object({
     .required("Email is required"),
   phoneNumber: yup
     .string()
-    .matches(/^03\d{9}$/, "Invalid phone number")
+    .matches(/^03\d{9}$/, "Invalid phone number, must be 11 numbers")
     .required("Phone number is required"),
   password: yup
     .string()

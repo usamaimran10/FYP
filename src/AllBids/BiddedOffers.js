@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import SingleBidCompnt from "./SingleBidCompnt";
 import ViewBidsOnRequest from "./ViewBidsOnRequest";
 import moment from "moment";
+import { Box, Typography } from "@mui/material";
 
 const BiddedOffers = () => {
   const ReqId = localStorage.getItem("ReqID");
@@ -25,9 +26,9 @@ const BiddedOffers = () => {
     viewBiddedOffers();
   }, []);
   return (
-    <div>
-      <div style={{ textAlign: "center" }}>
-        <h1
+    <Box>
+      <Box style={{ textAlign: "center" }}>
+        <Typography
           style={{
             fontSize: "4rem",
             fontWeight: "bold",
@@ -35,36 +36,41 @@ const BiddedOffers = () => {
           }}
         >
           Your Requests
-        </h1>
-      </div>
+        </Typography>
+      </Box>
 
       {bidoffers ? (
-        <div>
-          <div className="row">
-            {console.log(bidoffers)}
-            {bidoffers.map((offer, i) => {
-              {
-                console.log(offer._id);
-              }
-              return (
-                <div key={i}>
-                  <ViewBidsOnRequest
-                    //name={offer.professional_id.user_id.fullName}
-                    description={offer.description}
-                    max={offer.max_budget}
-                    min={offer.min_budget}
-                    id={offer._id}
-                    created={moment(offer.createdAt).fromNow()}
-                  />
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "40px",
+            marginTop: "20px",
+            padding: "20px",
+          }}
+        >
+          {bidoffers.map((offer, i) => {
+            {
+              console.log({ offer });
+            }
+            return (
+              <ViewBidsOnRequest
+                key={i}
+                description={offer.description}
+                duration={offer.duration}
+                max={offer.max_budget}
+                min={offer.min_budget}
+                id={offer._id}
+                name={offer?.professional_id?.user_id?.fullName}
+                phone={offer?.professional_id?.user_id?.phone}
+                created={moment(offer.createdAt).fromNow()}
+              />
+            );
+          })}
+        </Box>
       ) : (
         console.log("no")
       )}
-    </div>
+    </Box>
   );
 };
 
