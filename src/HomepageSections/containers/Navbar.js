@@ -86,12 +86,12 @@ const Navbar = (props) => {
         </a>
         {category == undefined && (
           <a href="#landingPage" onClick={GotoSignUp}>
-            Sing Up
+            Sign Up
           </a>
         )}
         {category == undefined && (
           <a href="#landingPage" onClick={GotoSignIn}>
-            Sing In
+            Sign In
           </a>
         )}
         <BsFillPersonFill
